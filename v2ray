@@ -1,1 +1,113 @@
-vmess://eyJhZGQiOiI4LjIxMC4zNS44NiIsImFpZCI6IjAiLCJob3N0Ijoid3d3LnRteGszMy54eXoiLCJpZCI6IjdiZmFkNGExLWNiODMtNGE5NS05Mjk0LTVlMGRmNzdhNzc2YyIsIm5ldCI6IndzIiwicGF0aCI6Ii9tb3JhZXgvdG14ayIsInBvcnQiOiI0NDMiLCJwcyI6Iummmea4ryIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
+vmess：// {
+
+  "dns": {
+
+    "hosts": {
+
+      "domain:googleapis.cn": "googleapis.com"
+
+    },
+
+    "servers": [
+
+      "1.1.1.1"
+
+    ]
+
+  },
+
+  "inbounds": [
+
+    {
+
+      "listen": "127.0.0.1",
+
+      "port": 10808,
+
+      "protocol": "socks",
+
+      "settings": {
+
+        "auth": "noauth",
+
+        "udp": true,
+
+        "userLevel": 8
+
+      },
+
+      "sniffing": {
+
+        "destOverride": [
+
+          "http",
+
+          "tls"
+
+        ],
+
+        "enabled": true
+
+      },
+
+      "tag": "socks"
+
+    },
+
+    {
+
+      "listen": "127.0.0.1",
+
+      "port": 10809,
+
+      "protocol": "http",
+
+      "settings": {
+
+        "userLevel": 8
+
+      },
+
+      "tag": "http"
+
+    }
+
+  ],
+
+  "log": {
+
+    "loglevel": "warning"
+
+  },
+
+  "outbounds": [
+
+    {
+
+      "mux": {
+
+        "concurrency": -1,
+
+        "enabled": false
+
+      },
+
+      "protocol": "vmess",
+
+      "settings": {
+
+        "vnext": [
+
+          {
+
+            "address": "8.210.35.86",
+
+            "port": 443,
+
+            "users": [
+
+              {
+
+                "alterId": 0,
+
+         ==
